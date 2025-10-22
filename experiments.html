@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Projects | Jiangrong Portfolio - UC San Diego">
+
+    <style>
+        highlight-box {
+            display: block;
+            border: 2px dashed #555;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+
     <title>Projects | Jiangrong</title>
     <link rel="icon" href="assets/favicon.ico">
     <style>
@@ -39,7 +49,7 @@
         <figure>
             <picture>
                 <source srcset="./assets/bewareofdogs.webp" type="image/webp">
-                <img src="./assets/bewareofdogs.webp" alt="Beware of dogs image" width="384" height="512">
+                <img src="./assets/bewareofdogs.webp" alt="Beware of dogs image" width="480" height="640">
             </picture>
             <figcaption>Beware of cute golden retrievers!!</figcaption>
         </figure>
@@ -60,6 +70,20 @@
                 <source src="./assets/twelve.mp4" type="video/mp4">
             </video>
         </figure>
+        <hr>
+
+        <figure>
+            <figcaption>Embedded YouTube video of Silksong speedrun using &lt;iframe&gt;.</figcaption>
+            <iframe
+                    width="720"
+                    height="432"
+                    src="https://www.youtube.com/embed/zJ6w8uaG740?autoplay=0&amp;wmode=transparent&amp;start=0"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </figure>
+    </section>
 
         <!-- canvas element -->
         <section id="canvas-demo">
@@ -123,12 +147,31 @@
             </p>
         </section>
 
+        <!-- Custom Elements Section -->
+        <section id="custom-elements">
+            <h2>Custom Elements Demonstration</h2>
+            <highlight-box>
+                This is a custom semantic element with its own CSS styling for hightlighting texts in a "box".
+            </highlight-box>
 
-    </section>
+            <!-- Hello World Custom Element Example -->
+            <p>And this is a custom element that logs a helloworld to the console.</p>
+            <hello-console></hello-console>
+            <script>
+                // Define Hello World custom element (console log only)
+                class HelloConsole extends HTMLElement {
+                    constructor() {
+                        super();
+                        console.log("Hello world! from <hello-console>");
+                    }
+                }
+                customElements.define('hello-console', HelloConsole);
+            </script>
+        </section>
 </main>
 
 <footer>
-    <p>&copy; <span id="year">2025</span> Jiangrong</p>
+    <p>&copy; 2025 Jiangrong</p>
     <p>Made with love in San Diego.</p>
 </footer>
 
